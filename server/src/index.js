@@ -27,7 +27,7 @@ const Session = mongoose.model('Session', sessionSchema);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: process.env.FRONTEND_URL || 'https://8dotpro.vercel.app/',
     methods: ['GET', 'POST']
   }
 });

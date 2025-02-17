@@ -8,7 +8,7 @@ export default function EditorPage({ params }: { params: { passkey: string } }) 
   const [socket, setSocket] = useState<any>(null);
 
   useEffect(() => {
-    const newSocket = io(process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:4000');
+    const newSocket = io(process.env.NEXT_PUBLIC_BACKEND_URL || 'https://eightdotpro-1.onrender.com');
     setSocket(newSocket);
 
     return () => {
