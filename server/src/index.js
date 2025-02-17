@@ -4,15 +4,15 @@ const { Server } = require('socket.io');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-
 const app = express();
 const server = http.createServer(app);
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/codecollab', {
+// MongoDB Connection (Updated to use MongoDB Atlas)
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://JSNinad:Ninad123@cluster0.ipidtet.mongodb.net/codecollab?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-});
+}).then(() => console.log('Connected to MongoDB Atlas'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Session Schema
 const sessionSchema = new mongoose.Schema({
@@ -125,4 +125,4 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-}); 
+});
