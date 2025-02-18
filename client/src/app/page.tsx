@@ -17,8 +17,8 @@ export default function Home() {
   return (
     <main>
       <div className="container">
-        <h1>CodeCollab</h1>
-        <p>Real-time collaborative code editor</p>
+        <h1>LivePro</h1>
+        <p>Real-time collaborative editor</p>
         <div className="input-container">
           <input
             type="text"
